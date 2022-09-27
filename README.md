@@ -39,6 +39,17 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+### `npm run server`
+
+**Starts the server that fetches data from mock-db.json file - this is a fake database (full fake REST API with zero coding)**
+Also when doing requests, it's good to know that:
+
+If you make POST, PUT, PATCH or DELETE requests, changes will be automatically and safely saved into your db.json using lowdb.
+Your request body JSON should be object enclosed, just like the GET output. (for example {"name": "Foobar"})
+Id values are not mutable. Any id value in the body of your PUT or PATCH request will be ignored. Only a value set in a POST request will be respected, but only if not already taken.
+A POST, PUT or PATCH request should include a Content-Type: application/json header to use the JSON in the request body. Otherwise it will return a 2XX status code, but without changes being made to the data.
+
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
