@@ -1,0 +1,37 @@
+{
+  "invoices": [
+    {
+      "id": 1,
+      "company": "S.C. Beneficiar S.R.L.",
+      "client": "S.C. Client 1 S.R.L.",
+      "serial": "BH",
+      "nr": 1,
+      "date": "23.09.2022",
+      "price": 21.22,
+      "vat": 12,
+      "total": 33
+    },
+    {
+      "id": 2,
+      "company": "S.C. Beneficiar S.R.L.",
+      "client": "S.C. Client 2 S.R.L.",
+      "serial": "BH",
+      "nr": 2,
+      "date": "23.09.2022",
+      "price": 44,
+      "vat": 10,
+      "total": 54
+    },
+    {
+      "id": 3,
+      "company": "S.C. Beneficiar S.R.L.",
+      "client": "S.C. Client 2 S.R.L.",
+      "serial": "BH",
+      "nr": 3,
+      "date": "24.09.2022",
+      "price": 12,
+      "vat": 2,
+      "total": 14
+    }
+  ]
+}

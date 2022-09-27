@@ -1,0 +1,16 @@
+.active {
+  color: white;
+  text-decoration: none;
+}
+.inactive {
+  color: gray;
+  text-decoration: none;
+}
+.me-auto {
+  display: flex;
+  gap: 1rem;
+  padding-left: 1rem;
+}
+a:hover {
+  color: rgb(207, 201, 201);
+}
