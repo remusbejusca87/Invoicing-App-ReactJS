@@ -7,13 +7,13 @@ interface InvoiceTableProps {
 }
 
 const InvoicesTable = ({ invoice }: InvoiceTableProps) => {
-  const navigate = useNavigate();
-  const handleRedirect = () => {
-    navigate(`/invoices/${invoice.id}`);
-  };
+  // const navigate = useNavigate();
+  // const handleRedirect = () => {
+  //   navigate(`/invoices/${invoice.id}`);
+  // };
   return (
     <tbody>
-      <tr>
+      <tr className="text-center">
         <td>{invoice.company}</td>
         <td>{invoice.client}</td>
         <td>{invoice.serial}</td>

@@ -1,12 +1,12 @@
 import InvoicesTableHead from "./components/InvoicesTableHead";
 import InvoicesTableBody from "./components/InvoicesTableBody";
 import Title from "../../components/Title/Title";
-import mockInvoices from "../../mocks/mock-db.json";
 import { Table, Button } from "react-bootstrap";
 import { IInvoice } from "../../types/IInvoice";
 import Spinner from "react-bootstrap/Spinner";
 import Alert from "react-bootstrap/Alert";
 import useInvoices from "../../hooks/useInvoices";
+import { NavLink as RouterNavLink } from "react-router-dom";
 
 const Invoices = () => {
   const { isLoading, isError, invoices } = useInvoices();
@@ -34,9 +34,12 @@ const Invoices = () => {
   return (
     <>
       <Title title="My Invoices" />
-      <Button variant="primary" style={{ marginBottom: "15px" }}>
-        New Invoice
-      </Button>
+      <RouterNavLink to={`/invoices/new`}>
+        <Button variant="primary" style={{ marginBottom: "15px" }}>
+          New Invoice
+        </Button>
+      </RouterNavLink>
+
       <Table striped bordered hover size="sm">
         <InvoicesTableHead />
         {invoices.map((invoice: IInvoice) => (

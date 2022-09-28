@@ -1,16 +1,17 @@
 import { IInvoice } from "../types/IInvoice";
 import { useEffect, useState } from "react";
 import { getInvoice } from "../services/invoiceService";
+import defaultEmptyInvoice from "../utils/constants";
 
 const useInvoice = (id: string) => {
-  const [invoice, setInvoice] = useState<IInvoice>();
+  const [invoice, setInvoice] = useState<IInvoice>(defaultEmptyInvoice);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   useEffect(() => {
     (async () => {
-      setIsError(false);
-      setIsLoading(true);
       try {
+        setIsError(false);
+        setIsLoading(true);
         const data = await getInvoice(id);
         setInvoice(data);
       } catch (err) {
@@ -18,9 +19,7 @@ const useInvoice = (id: string) => {
       }
       setIsLoading(false);
     })();
-  }, [id]); // useEffect se executa doar daca se modif. acel prop uuid
-  // this empty array makes useEffect to execute once. if not use [] -> infinit loop
-  // console.log("render");
+  }, [id]); // useEffect se executa doar daca se modif. acel prop id
 
   return {
     invoice,

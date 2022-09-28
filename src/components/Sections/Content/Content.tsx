@@ -9,7 +9,7 @@ interface IContentProps {
 
 const Content = ({ children }: IContentProps) => {
   return (
-    <Container style={{ backgroundColor: "#f5f5dc", height: "100vh" }}>
+    <Container style={{ backgroundColor: "#f5f5dc", minHeight: "100vh" }}>
       <Row>
         <Col> {children} </Col>
       </Row>

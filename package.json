@@ -15,6 +15,7 @@
     "cdbreact": "^1.5.3",
     "font-awesome": "^4.7.0",
     "json-server": "^0.17.0",
+    "random-city-name": "^1.0.2",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",

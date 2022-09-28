@@ -1,7 +1,6 @@
 // .jsx or .tsx extensions are used when we have html elements too in our file.
 // .js or .ts extensions are used only when we have in our file javascript or typescript code(variables, functions)
 import { IInvoice } from "../types/IInvoice";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { getInvoices } from "../services/invoiceService";
 

@@ -7,7 +7,7 @@ const Invoice = () => {
   const { id } = useParams();
   const { invoice, isError, isLoading } = useInvoice(id || "");
 
-  if (isLoading || !invoice) {
+  if (isLoading) {
     return (
       <Spinner animation="border" role="status">
         <span className="visually-hidden">Loading...</span>

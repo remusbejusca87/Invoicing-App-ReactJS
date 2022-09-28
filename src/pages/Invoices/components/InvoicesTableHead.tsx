@@ -1,10 +1,9 @@
 import React from "react";
-import Table from "react-bootstrap/Table";
 
 const InvoicesTableHead = () => {
   return (
-    <thead>
-      <tr>
+    <thead style={{ backgroundColor: "#26272b", color: "white" }}>
+      <tr className="text-center">
         <th>Company</th>
         <th>Client</th>
         <th>Serial</th>
