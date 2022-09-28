@@ -1,6 +1,6 @@
 import { IInvoice } from "../../../types/IInvoice";
 import "react-bootstrap";
-import { Button, Card, Container } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import CompanyDetails from "./CompanyDetails";
 
@@ -18,12 +18,21 @@ const InvoiceDetails = ({ invoice }: InvoiceDetailsProps) => {
         <NavLink to="/invoices">
           <Button variant="secondary">Back</Button>
         </NavLink>
-        <Button variant="primary" style={{ marginLeft: "15px" }}>
-          Edit
-        </Button>
+        <NavLink to={`/invoices/edit/${invoice.id}`}>
+          <Button variant="primary" style={{ marginLeft: "15px" }}>
+            Edit
+          </Button>
+        </NavLink>
       </div>
 
-      <Card style={{ width: "80%", margin: "0 auto", marginTop: "1rem" }}>
+      <Card
+        style={{
+          width: "80%",
+          margin: "0 auto",
+          marginTop: "1rem",
+          marginBottom: "1rem",
+        }}
+      >
         <Card.Body>
           <div className="row" style={{ justifyContent: "space-between" }}>
             <div className="col-auto">
@@ -136,8 +145,8 @@ const InvoiceDetails = ({ invoice }: InvoiceDetailsProps) => {
                 <td> {invoice.itemUnit} </td>
                 <td> {invoice.itemAmount.toFixed(2)} </td>
                 <td> {invoice.itemPrice.toFixed(2)}</td>
-                <td> {totalValue}</td>
-                <td>{totalValue * 0.19}</td>
+                <td> {totalValue.toFixed(2)}</td>
+                <td>{(totalValue * 0.19).toFixed(2)}</td>
                 <th colSpan={3}></th>
               </tr>
               <tr className="text-center">
@@ -145,10 +154,10 @@ const InvoiceDetails = ({ invoice }: InvoiceDetailsProps) => {
                 <td colSpan={3}></td>
                 <td>Total:</td>
                 <td>
-                  <strong>{totalValue} </strong>
+                  <strong>{totalValue.toFixed(2)} </strong>
                 </td>
                 <td>
-                  <strong> {totalValue * 0.19} </strong>
+                  <strong> {(totalValue * 0.19).toFixed(2)} </strong>
                 </td>
               </tr>
               <tr className="text-center">
@@ -156,7 +165,7 @@ const InvoiceDetails = ({ invoice }: InvoiceDetailsProps) => {
                 <td colSpan={3}></td>
                 <td className="fs-5">Total payment</td>
                 <td colSpan={2} className="fs-5">
-                  <strong> {totalValue + totalValue * 0.19} </strong>
+                  <strong>{(totalValue + totalValue * 0.19).toFixed(2)}</strong>
                 </td>
               </tr>
             </tbody>

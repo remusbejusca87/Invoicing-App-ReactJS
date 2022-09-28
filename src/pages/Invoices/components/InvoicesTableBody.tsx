@@ -1,16 +1,11 @@
 import { IInvoice } from "../../../types/IInvoice";
 import { NavLink } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 
 interface InvoiceTableProps {
   invoice: IInvoice;
 }
 
 const InvoicesTable = ({ invoice }: InvoiceTableProps) => {
-  // const navigate = useNavigate();
-  // const handleRedirect = () => {
-  //   navigate(`/invoices/${invoice.id}`);
-  // };
   return (
     <tbody>
       <tr className="text-center">
@@ -34,14 +29,17 @@ const InvoicesTable = ({ invoice }: InvoiceTableProps) => {
         </td>
         <td>
           <NavLink
-            to="#"
+            to={`/invoices/edit/${invoice.id}`}
             style={{ color: "blue", textDecoration: "underline" }}
           >
             Edit
           </NavLink>
         </td>
         <td>
-          <NavLink to="#" style={{ color: "red", textDecoration: "underline" }}>
+          <NavLink
+            to={`/invoices/delete/${invoice.id}`}
+            style={{ color: "red", textDecoration: "underline" }}
+          >
             Delete
           </NavLink>
         </td>

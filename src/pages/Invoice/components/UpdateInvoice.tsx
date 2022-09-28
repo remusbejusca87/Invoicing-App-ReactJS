@@ -1,33 +1,57 @@
+import { useEffect, useState } from "react";
 import { Button, Card, Form, InputGroup } from "react-bootstrap";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
+import useInvoice from "../../../hooks/useInvoice";
+import { useUpdateInvoiceMutation } from "../../../hooks/useUpdateInvoiceMutation";
 
-import { useCreateInvoice } from "../../../../hooks/useCreateInvoice";
-import { useState } from "react";
+const UpdateInvoice = () => {
+  const { id } = useParams();
 
-const CreateInvoice = () => {
-  const [company, setCompany] = useState("");
-  const [client, setClient] = useState("");
-  const [serial, setSerial] = useState("");
-  const [nr, setNr] = useState(0);
-  const [date, setDate] = useState("");
-  const [itemName, setItemName] = useState("");
-  const [itemUnit, setItemUnit] = useState("");
-  const [itemAmount, setItemAmount] = useState(0);
-  const [itemPrice, setItemPrice] = useState(0);
+  const { invoice } = useInvoice(id || "");
 
-  const { createInvoice, invoice } = useCreateInvoice();
+  const [company, setCompany] = useState(invoice.company);
+  const [client, setClient] = useState(invoice.client);
+  const [serial, setSerial] = useState(invoice.serial);
+  const [nr, setNr] = useState(invoice.nr);
+  const [date, setDate] = useState(invoice.date);
+  const [itemName, setItemName] = useState(invoice.itemName);
+  const [itemUnit, setItemUnit] = useState(invoice.itemUnit);
+  const [itemAmount, setItemAmount] = useState(invoice.itemAmount);
+  const [itemPrice, setItemPrice] = useState(invoice.itemPrice);
+
+  useEffect(() => {
+    //nu se updatau state-urile fara sa fac inca un state cu noua val de invoice.
+    setCompany(invoice.company);
+    setClient(invoice.client);
+    setSerial(invoice.serial);
+    setNr(invoice.nr);
+    setDate(invoice.date);
+    setItemName(invoice.itemName);
+    setItemUnit(invoice.itemUnit);
+    setItemAmount(invoice.itemAmount);
+    setItemPrice(invoice.itemPrice);
+  }, [
+    invoice.company,
+    invoice.client,
+    invoice.serial,
+    invoice.nr,
+    invoice.date,
+    invoice.itemName,
+    invoice.itemUnit,
+    invoice.itemAmount,
+    invoice.itemPrice,
+  ]);
+
+  const { updateInvoice } = useUpdateInvoiceMutation();
 
   const navigate = useNavigate();
   const handleRedirect = () => {
-    if (invoice && invoice.id) {
-      navigate(`/invoices/${invoice.id}`);
-    }
+    navigate(`/invoices/${id}`);
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    await createInvoice({
+    updateInvoice({
       company,
       client,
       serial,
@@ -37,10 +61,10 @@ const CreateInvoice = () => {
       itemUnit,
       itemAmount,
       itemPrice,
+      id: invoice.id,
     });
     handleRedirect();
   };
-
   return (
     <>
       <div style={{ width: "80%", margin: "0 auto", marginTop: "1rem" }}>
@@ -227,12 +251,12 @@ const CreateInvoice = () => {
                   <td colSpan={3}></td>
                   <td className="fs-5">Total payment</td>
                   <td colSpan={2} className="fs-5">
-                    <strong> total value</strong>
+                    <strong>test</strong>
                   </td>
                 </tr>
               </tbody>
             </table>
-            <Button type="submit"> Create </Button>
+            <Button type="submit"> Update </Button>
           </Card.Body>
         </Card>
       </form>
@@ -240,4 +264,4 @@ const CreateInvoice = () => {
   );
 };
 
-export default CreateInvoice;
+export default UpdateInvoice;

@@ -1,107 +1,28 @@
 {
   "invoices": [
     {
-      "id": 1,
-      "company": "S.C. Beneficiar S.R.L.",
-      "client": "S.C. Client 1 S.R.L.",
-      "serial": "BH",
-      "nr": 1,
-      "date": "23.09.2022",
-      "price": 21.22,
-      "vat": 12,
-      "total": 33,
-      "ctr": 1,
-      "itemName": "item 1",
-      "itemUnit": "pcs",
-      "itemAmount": 3,
-      "itemPrice": 10,
-      "itemValue": 1,
-      "itemVat": 1
-    },
-    {
-      "id": 2,
-      "company": "S.C. Beneficiar S.R.L.",
-      "client": "S.C. Client 2 S.R.L.",
-      "serial": "BH",
-      "nr": 2,
-      "date": "23.09.2022",
-      "price": 44,
-      "vat": 10,
-      "total": 54,
-      "ctr": 1,
-      "itemName": "item 1",
-      "itemUnit": "pcs",
-      "itemAmount": 3,
-      "itemPrice": 10,
-      "itemValue": 1,
-      "itemVat": 1
-    },
-    {
-      "id": 3,
-      "company": "S.C. Beneficiar S.R.L.",
-      "client": "S.C. Client 2 S.R.L.",
-      "serial": "BH",
-      "nr": 3,
-      "date": "24.09.2022",
-      "price": 12,
-      "vat": 2,
-      "total": 14,
-      "ctr": 1,
-      "itemName": "item 1",
-      "itemUnit": "pcs",
-      "itemAmount": 3,
-      "itemPrice": 10,
-      "itemValue": 1,
-      "itemVat": 1
-    },
-    [
-      {
-        "company": "dsad",
-        "client": "asdas",
-        "serial": "agsfg",
-        "nr": 1,
-        "date": "asdasd",
-        "itemName": "asdas",
-        "itemUnit": "asdad",
-        "itemAmount": 1,
-        "itemPrice": 1
-      }
-    ],
-    {
-      "company": "adasdas",
-      "client": "asdas",
-      "serial": "asddas",
-      "nr": 1,
-      "date": "asdasd",
-      "itemName": "asdasd",
-      "itemUnit": "asdasd",
-      "itemAmount": 3,
+      "company": "asaassa",
+      "client": "",
+      "serial": "",
+      "nr": 0,
+      "date": "",
+      "itemName": "",
+      "itemUnit": "",
+      "itemAmount": 2,
       "itemPrice": 3,
-      "id": 5
+      "id": 1
     },
     {
       "company": "",
       "client": "",
       "serial": "",
-      "nr": 0.255,
+      "nr": 0,
       "date": "",
       "itemName": "",
       "itemUnit": "",
-      "itemAmount": 0,
-      "itemPrice": 0,
-      "id": 6
-    },
-    {
-      "company": "sad",
-      "client": "asda",
-      "serial": "asda",
-      "nr": 34,
-      "date": "24",
-      "itemName": "",
-      "itemUnit": "",
-      "itemAmount": 0,
-      "itemPrice": 0,
-      "id": 7
+      "itemAmount": 2,
+      "itemPrice": 3,
+      "id": 2
     }
   ]
 }

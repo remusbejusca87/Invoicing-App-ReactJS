@@ -6,14 +6,13 @@ import { IInvoice } from "../types/IInvoice";
 export const useCreateInvoice = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-  // const [invoice, setInvoice] = useState<ICreateInvoiceReq>();
+  const [invoice, setInvoice] = useState<IInvoice>();
   const createInvoice = useCallback(async (req: ICreateInvoiceReq) => {
     try {
       setIsLoading(true);
       setIsError(false);
       const data = await postInvoice(req);
-      // setInvoice(data);
-      console.log(data);
+      setInvoice(data);
     } catch (err) {
       setIsError(true);
     }
@@ -24,6 +23,6 @@ export const useCreateInvoice = () => {
     isLoading,
     isError,
     createInvoice,
-    // invoice,
+    invoice,
   };
 };

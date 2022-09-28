@@ -42,6 +42,7 @@ const Invoices = () => {
 
       <Table striped bordered hover size="sm">
         <InvoicesTableHead />
+
         {invoices.map((invoice: IInvoice) => (
           <InvoicesTableBody
             invoice={invoice}

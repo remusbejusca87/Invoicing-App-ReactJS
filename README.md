@@ -1,3 +1,10 @@
+# About this project:
+-  Web App with multiple pages.
+-  With this app we can create, update/edit, delete our invoices.
+-  App has CRUD functionalities for the Frontend. It uses json-server that fetches data from a fake database. Http requests are made with axios.
+-  The functionalities are structured in components, custom hooks, interfaces, services.
+-  App was created using ReactJS, React Bootstrap and Axios.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

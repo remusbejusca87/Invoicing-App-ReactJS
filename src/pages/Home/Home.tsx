@@ -4,17 +4,18 @@ import Title from "../../components/Title/Title";
 const Home = () => {
   return (
     <>
-      <Title title="This is the app home page." />
+      <Title title="This is the home page of the app." />
       <p> This page is same like about page. Web App with multiple pages. </p>
+      <p>As you can see, it's just a test page.</p>
       <p>
-        App has CRUD functionalities for the Frontend.Used json-server that
-        fetches data from a fake database.
+        App has CRUD functionalities for the Frontend. It uses json-server that
+        fetches data from a fake database. Http requests are made with axios.
       </p>
-      <p>The functionalities are structured in components and custom hooks.</p>
       <p>
-        App was created using ReactJS, React Bootstrap, React Query and React
-        Redux.
+        The functionalities are structured in components, custom hooks,
+        interfaces, services.
       </p>
+      <p>App was created using ReactJS, React Bootstrap and Axios.</p>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus
         praesentium voluptates earum dolorum temporibus! Porro distinctio
