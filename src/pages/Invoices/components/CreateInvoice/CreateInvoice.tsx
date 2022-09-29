@@ -15,13 +15,11 @@ const CreateInvoice = () => {
   const [itemAmount, setItemAmount] = useState(0);
   const [itemPrice, setItemPrice] = useState(0);
 
-  const { createInvoice, invoice } = useCreateInvoice();
+  const { createInvoice } = useCreateInvoice();
 
   const navigate = useNavigate();
   const handleRedirect = () => {
-    if (invoice && invoice.id) {
-      navigate(`/invoices/${invoice.id}`);
-    }
+    navigate("/invoices");
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -205,9 +203,9 @@ const CreateInvoice = () => {
                       />
                     </InputGroup>
                   </td>
-                  <td style={{ width: "100px" }}>total result</td>
+                  <td style={{ width: "100px" }}> - </td>
 
-                  <td style={{ width: "100px" }}>total vat</td>
+                  <td style={{ width: "100px" }}> - </td>
 
                   <th colSpan={3}></th>
                 </tr>
@@ -216,10 +214,10 @@ const CreateInvoice = () => {
                   <td colSpan={3}></td>
                   <td>Total:</td>
                   <td>
-                    <strong>nothing </strong>
+                    <strong> - </strong>
                   </td>
                   <td>
-                    <strong> nothing </strong>
+                    <strong> - </strong>
                   </td>
                 </tr>
                 <tr className="text-center">
@@ -227,7 +225,7 @@ const CreateInvoice = () => {
                   <td colSpan={3}></td>
                   <td className="fs-5">Total payment</td>
                   <td colSpan={2} className="fs-5">
-                    <strong> total value</strong>
+                    <strong> - </strong>
                   </td>
                 </tr>
               </tbody>

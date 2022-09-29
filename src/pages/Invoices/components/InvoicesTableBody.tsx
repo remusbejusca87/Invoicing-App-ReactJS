@@ -6,6 +6,8 @@ interface InvoiceTableProps {
 }
 
 const InvoicesTable = ({ invoice }: InvoiceTableProps) => {
+  const total = parseInt((invoice.itemAmount * invoice.itemPrice).toFixed(2));
+  const totalValue = total + total * 0.19;
   return (
     <tbody>
       <tr className="text-center">
@@ -14,10 +16,10 @@ const InvoicesTable = ({ invoice }: InvoiceTableProps) => {
         <td>{invoice.serial}</td>
         <td>{invoice.nr}</td>
         <td>{invoice.date}</td>
-        <td>{invoice.price}</td>
-        <td>{invoice.vat}</td>
+        <td>{total.toFixed(2)}</td>
+        <td>{(total * 0.19).toFixed(2)}</td>
         <td>
-          <b>{invoice.total}</b>
+          <b>{totalValue.toFixed(2)}</b>
         </td>
         <td>
           <NavLink

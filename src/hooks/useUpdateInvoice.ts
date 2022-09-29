@@ -2,7 +2,7 @@ import { useCallback, useState } from "react";
 import { putInvoice } from "../services/invoiceService";
 import { IUpdateInvoiceReq } from "../types/IUpdateInvoiceReq";
 
-export const useUpdateInvoiceMutation = () => {
+export const useUpdateInvoice = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [invoice] = useState<IUpdateInvoiceReq>();
@@ -27,12 +27,3 @@ export const useUpdateInvoiceMutation = () => {
     invoice,
   };
 };
-
-// export const useUpdateInvoiceMutation = () => {
-//   const queryClient = useQueryClient();
-//   return useMutation(putInvoice, {
-//     onSuccess: (invoice) => {
-//       queryClient.invalidateQueries(keyBuilder.invoice(invoice.id));
-//     },
-//   });
-// };

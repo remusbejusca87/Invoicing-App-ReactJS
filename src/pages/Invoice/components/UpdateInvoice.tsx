@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Button, Card, Form, InputGroup } from "react-bootstrap";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
 import useInvoice from "../../../hooks/useInvoice";
-import { useUpdateInvoiceMutation } from "../../../hooks/useUpdateInvoiceMutation";
+import { useUpdateInvoice } from "../../../hooks/useUpdateInvoice";
 
 const UpdateInvoice = () => {
   const { id } = useParams();
@@ -19,6 +19,10 @@ const UpdateInvoice = () => {
   const [itemAmount, setItemAmount] = useState(invoice.itemAmount);
   const [itemPrice, setItemPrice] = useState(invoice.itemPrice);
 
+  const [totalValue, setTotalValue] = useState(
+    parseInt((invoice.itemAmount * invoice.itemPrice).toFixed(2))
+  );
+
   useEffect(() => {
     //nu se updatau state-urile fara sa fac inca un state cu noua val de invoice.
     setCompany(invoice.company);
@@ -30,6 +34,7 @@ const UpdateInvoice = () => {
     setItemUnit(invoice.itemUnit);
     setItemAmount(invoice.itemAmount);
     setItemPrice(invoice.itemPrice);
+    setTotalValue(Number((invoice.itemAmount * invoice.itemPrice).toFixed(2)));
   }, [
     invoice.company,
     invoice.client,
@@ -42,7 +47,7 @@ const UpdateInvoice = () => {
     invoice.itemPrice,
   ]);
 
-  const { updateInvoice } = useUpdateInvoiceMutation();
+  const { updateInvoice } = useUpdateInvoice();
 
   const navigate = useNavigate();
   const handleRedirect = () => {
@@ -229,9 +234,11 @@ const UpdateInvoice = () => {
                       />
                     </InputGroup>
                   </td>
-                  <td style={{ width: "100px" }}>total result</td>
+                  <td style={{ width: "100px" }}>{totalValue.toFixed(2)}</td>
 
-                  <td style={{ width: "100px" }}>total vat</td>
+                  <td style={{ width: "100px" }}>
+                    {(totalValue * 0.19).toFixed(2)}
+                  </td>
 
                   <th colSpan={3}></th>
                 </tr>
@@ -240,10 +247,10 @@ const UpdateInvoice = () => {
                   <td colSpan={3}></td>
                   <td>Total:</td>
                   <td>
-                    <strong>nothing </strong>
+                    <strong>{totalValue.toFixed(2)} </strong>
                   </td>
                   <td>
-                    <strong> nothing </strong>
+                    <strong>{(totalValue * 0.19).toFixed(2)} </strong>
                   </td>
                 </tr>
                 <tr className="text-center">
@@ -251,7 +258,9 @@ const UpdateInvoice = () => {
                   <td colSpan={3}></td>
                   <td className="fs-5">Total payment</td>
                   <td colSpan={2} className="fs-5">
-                    <strong>test</strong>
+                    <strong>
+                      {(totalValue + totalValue * 0.19).toFixed(2)}
+                    </strong>
                   </td>
                 </tr>
               </tbody>

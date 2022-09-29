@@ -1,28 +1,40 @@
 {
   "invoices": [
     {
-      "company": "asaassa",
-      "client": "",
-      "serial": "",
-      "nr": 0,
-      "date": "",
-      "itemName": "",
-      "itemUnit": "",
-      "itemAmount": 2,
-      "itemPrice": 3,
+      "company": "companie 1",
+      "client": "client 1",
+      "serial": "5646",
+      "nr": 1,
+      "date": "22.09.2022",
+      "itemName": "service",
+      "itemUnit": "buc",
+      "itemAmount": 5,
+      "itemPrice": 4,
       "id": 1
     },
     {
-      "company": "",
-      "client": "",
-      "serial": "",
-      "nr": 0,
-      "date": "",
-      "itemName": "",
-      "itemUnit": "",
-      "itemAmount": 2,
-      "itemPrice": 3,
+      "company": "companie 2",
+      "client": "client 2",
+      "serial": "13a",
+      "nr": 2,
+      "date": "23.09.2022",
+      "itemName": "service",
+      "itemUnit": "kg",
+      "itemAmount": 2.1,
+      "itemPrice": 4,
       "id": 2
+    },
+    {
+      "company": "companie 1",
+      "client": "client 1",
+      "serial": "rwerfd",
+      "nr": 2,
+      "date": "22.09.2022",
+      "itemName": "service",
+      "itemUnit": "buc",
+      "itemAmount": 3,
+      "itemPrice": 10,
+      "id": 3
     }
   ]
 }

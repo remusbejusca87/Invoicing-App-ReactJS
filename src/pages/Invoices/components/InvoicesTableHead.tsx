@@ -9,9 +9,9 @@ const InvoicesTableHead = () => {
         <th>Serial</th>
         <th>Number</th>
         <th>Date</th>
-        <th>Price</th>
+        <th>Value</th>
         <th>VAT</th>
-        <th>Total</th>
+        <th>Total Value</th>
         <th colSpan={3}></th>
       </tr>
     </thead>

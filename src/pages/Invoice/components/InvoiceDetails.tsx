@@ -140,12 +140,12 @@ const InvoiceDetails = ({ invoice }: InvoiceDetailsProps) => {
 
             <tbody>
               <tr className="text-center">
-                <td> {invoice.ctr} </td>
+                <td> 1 </td>
                 <td> {invoice.itemName}</td>
                 <td> {invoice.itemUnit} </td>
-                <td> {invoice.itemAmount.toFixed(2)} </td>
-                <td> {invoice.itemPrice.toFixed(2)}</td>
-                <td> {totalValue.toFixed(2)}</td>
+                <td> {invoice.itemAmount} </td>
+                <td> {invoice.itemPrice}</td>
+                <td> {totalValue}</td>
                 <td>{(totalValue * 0.19).toFixed(2)}</td>
                 <th colSpan={3}></th>
               </tr>
